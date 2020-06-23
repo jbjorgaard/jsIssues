@@ -88,9 +88,6 @@ class View {
     }
   }
 
-  // callSetActiveView() {
-  //   app.model.setActiveView(app.model.viewData, item.id);
-  // }
   // add new content to page content
   addContent(viewDataContent, view) {
     for (var item of viewDataContent) {
