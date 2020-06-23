@@ -74,10 +74,12 @@ class View {
   }
   // populate nav menu with existing views
   displayViewLinks(model, view) {
-    for (var item of model.viewData) {
+    view.clearLinks(view.viewList);
+    for (let item of model.viewData) {
       const li = view.createElement('li');
       li.id = item.id;
       const a = view.createElement('a');
+      a.onclick = ()=> view.switchView(model, view, item.id);
       a.href = item.link;
       if(model.getActiveView(model.viewData) === item.id) {
         a.className += ' active';
@@ -103,6 +105,10 @@ class View {
   // clears existing page content
   clearContent(contentList) {
     contentList.innerHTML = '';
+  }
+
+  clearLinks(viewList) {
+    viewList.innerHTML = '';
   }
   // calls clearContent and addContent methods
   displayView(model, view) {
