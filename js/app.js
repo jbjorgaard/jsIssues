@@ -79,11 +79,18 @@ class View {
       li.id = item.id;
       const a = view.createElement('a');
       a.href = item.link;
+      if(model.getActiveView(model.viewData) === item.id) {
+        a.className += ' active';
+      }
       a.append(item.name);
       li.append(a);
       view.viewList.append(li);
     }
   }
+
+  // callSetActiveView() {
+  //   app.model.setActiveView(app.model.viewData, item.id);
+  // }
   // add new content to page content
   addContent(viewDataContent, view) {
     for (var item of viewDataContent) {
@@ -105,6 +112,12 @@ class View {
     view.clearContent(view.contentList);
 
     view.addContent(view.getData(model.getActiveView(model.viewData), model.viewData), view);
+  }
+
+  switchView(model, view, id) {
+    model.setActiveView(model.viewData, id);
+    view.displayViewLinks(model, view);
+    view.displayView(model, view);
   }
 
 
