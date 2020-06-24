@@ -3,19 +3,29 @@
 <head>
   <meta charset="utf-8">
   <title>Single Page Issue Tracker</title>
-  <link rel = "stylesheet"
-    type = "text/css"
-    href = "css/styles.css" />
+  <link rel = "stylesheet" type = "text/css" href = "css/styles.css" />
+  <script src="https://kit.fontawesome.com/02a1a974ac.js" crossorigin="anonymous"></script>
+  <link rel = "stylesheet" type = "text/css" href = "css/gui.css" />
 </head>
 <body>
   <header>
   </header>
-  <main id="app">
-
+  <main>
+    <div id='issue-container'>
+        <button id='button-new-issue'>New Issue</button>
+        <div id='issues'></div>
+    </div>
+    <div id='templates'>
+        <div id='issue' class='issue'>
+            <b>Issue#: </b><input type='text' x-field='id' size="3" readonly></span> <b>Summary: </b> <input type='text' x-field='summary'></span> <i class="fas fa-window-close" name='close'></i>
+            <br>
+            <b>Note</b>
+            <textarea x-field='note'></textarea>
+        </div>
+    </div>
   </main>
   <footer>
-
   </footer>
-  <script src="/js/app.js" charset="utf-8"></script>
+  <script type="module" src="js/app.js" charset="utf-8"></script>
 </body>
 </html>

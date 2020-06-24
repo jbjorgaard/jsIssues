@@ -37,6 +37,7 @@ nav ul {
 
 nav li {
   float: left;
+  width: 22ex;
 }
 
 nav li a {
